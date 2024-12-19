@@ -1,4 +1,4 @@
-package org.acme;
+package fr.isen.ticketapp;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -9,16 +9,16 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-@Path("/GetAllTicket")
-public class GetAllTicket {
+@Path("/ticket")
+public class TicketResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String GetAllTickets() {
+    public String GetTickets() {
         try {
             // Lecture du contenu du fichier JSON depuis le dossier resources
             String rawJSON = readFromJsonFile("src/main/resources/Ticket.json");
-            return "Liste tickets\n" + rawJSON;
+            return rawJSON;
         } catch (IOException e) {
             e.printStackTrace();
             return "Erreur lors de la lecture du fichier JSON : " + e.getMessage();

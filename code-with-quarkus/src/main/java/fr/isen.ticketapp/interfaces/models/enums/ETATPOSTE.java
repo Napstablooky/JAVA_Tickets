@@ -2,7 +2,7 @@ package fr.isen.ticketapp.interfaces.models.enums;
 
 
 public enum ETATPOSTE {
-    En Fonction,
-    En maintenance,
-    En commande;
-}
+    En_Fonction,
+    En_maintenance,
+    En_commande;
+};
