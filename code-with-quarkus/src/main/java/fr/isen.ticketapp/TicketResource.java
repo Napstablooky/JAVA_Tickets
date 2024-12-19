@@ -5,6 +5,7 @@ import fr.isen.ticketapp.interfaces.models.TicketModel;
 import fr.isen.ticketapp.interfaces.services.TicketService;
 import io.smallrye.mutiny.Uni;
 import jakarta.json.Json;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -53,4 +54,9 @@ public class TicketResource {
         return Uni.createFrom().item(Response.ok(ticketModel).build());
     }
 
+    @DELETE
+    @Path("/{id}")
+    public String DelTicketById(int id) {
+        return "Le ticket " + id + "a bien été supprimé";
+    }
 }
