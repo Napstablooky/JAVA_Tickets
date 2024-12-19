@@ -1,0 +1,82 @@
+  {
+    "postes": [
+      {
+        "id": "1",
+        "utilisateurId": "1",
+        "nom": "PC-Bureau-01",
+        "adresseIP": "192.168.1.101",
+        "etat": "en fonction",
+        "configuration": {
+      "processeur": "Intel i5",
+      "ram": "16GB DDR4",
+      "stockage": "1TB SSD",
+      "carteGraphique": "NVIDIA RTX 3060",
+      "os": "Windows 11 Pro",
+      "ecran": "27 pouces, 144Hz"
+        }
+    
+      },
+      {
+        "id": "2",
+        "utilisateurId": "2",
+        "nom": "PC-Bureau-02",
+        "adresseIP": "192.168.1.102",
+        "etat": "en maintenance",
+        "configuration": {
+            "processeur": "Intel i5",
+            "ram": "16GB DDR4",
+            "stockage": "1TB SSD",
+            "carteGraphique": "NVIDIA RTX 3060",
+            "os": "Windows 11 Pro",
+            "ecran": "27 pouces, 144Hz"
+            }
+      },
+      {
+        "id": "3",
+        "utilisateurId": "3",
+        "nom": "PC-Bureau-03",
+        "adresseIP": "192.168.1.103",
+        "etat": "en fonction",
+        "configuration": {
+            "processeur": "Intel i5",
+            "ram": "16GB DDR4",
+            "stockage": "1TB SSD",
+            "carteGraphique": "NVIDIA RTX 3060",
+            "os": "Windows 11 Pro",
+            "ecran": "27 pouces, 144Hz"
+            }      
+        },
+      {
+        "id": "4",
+        "utilisateurId": "4",
+        "nom": "PC-Bureau-04",
+        "adresseIP": "192.168.1.104",
+        "etat": "en commande",
+        "configuration": {
+            "processeur": "Intel i5",
+            "ram": "16GB DDR4",
+            "stockage": "1TB SSD",
+            "carteGraphique": "NVIDIA RTX 3060",
+            "os": "Windows 11 Pro",
+            "ecran": "27 pouces, 144Hz"
+            }      
+        },
+      {
+        "id": "5",
+        "utilisateurId": "5",
+        "nom": "PC-Bureau-05",
+        "adresseIP": "192.168.1.200",
+        "etat": "en fonction",
+        "configuration": {
+            "processeur": "Intel i5",
+            "ram": "16GB DDR4",
+            "stockage": "1TB SSD",
+            "carteGraphique": "NVIDIA RTX 3060",
+            "os": "Windows 11 Pro",
+            "ecran": "27 pouces, 144Hz"
+            }      
+        }
+    ]
+  }
+  
+  
