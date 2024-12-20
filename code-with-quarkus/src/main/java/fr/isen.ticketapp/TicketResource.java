@@ -16,15 +16,10 @@ import javax.print.DocFlavor;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 
 @Path("/ticket")
 public class TicketResource {
-
-    // Méthode pour lire un fichier JSON
-    private String readFromJsonFile(String filePath) throws IOException {
-        // Utilise java.nio.file pour lire le fichier
-        return new String(Files.readAllBytes(Paths.get(filePath)));
-    }
 
     private TicketService ticketService;
 
@@ -34,16 +29,10 @@ public class TicketResource {
 
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String GetTickets() {
-        try {
-            // Lecture du contenu du fichier JSON depuis le dossier resources
-            String rawJSON = readFromJsonFile("src/main/resources/Ticket.json");
-            return rawJSON;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return "Erreur lors de la lecture du fichier JSON : " + e.getMessage();
-        }
+    @Produces(MediaType.APPLICATION_JSON)
+    public Uni<Response> GetTickets() {
+        List<TicketModel> tickets = this.ticketService.getTickets();
+        return Uni.createFrom().item(Response.ok(tickets).build());
     }
 
     @GET
@@ -57,6 +46,6 @@ public class TicketResource {
     @DELETE
     @Path("/{id}")
     public String DelTicketById(int id) {
-        return "Le ticket " + id + "a bien été supprimé";
+        return "Le ticket " + id + "a bien été supprimé.";
     }
 }
