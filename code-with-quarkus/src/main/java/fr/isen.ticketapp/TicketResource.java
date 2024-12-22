@@ -1,5 +1,6 @@
 package fr.isen.ticketapp;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import fr.isen.ticketapp.impl.services.TicketServiceImpl;
 import fr.isen.ticketapp.interfaces.models.TicketModel;
 import fr.isen.ticketapp.interfaces.services.TicketService;
@@ -30,16 +31,16 @@ public class TicketResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Uni<Response> GetTickets() {
-        List<TicketModel> tickets = this.ticketService.getTickets();
+    public Uni<Response> GetTickets() throws JsonProcessingException {
+        String tickets = this.ticketService.getTickets();
         return Uni.createFrom().item(Response.ok(tickets).build());
     }
 
     @GET
     @Path("/{id}")
     @Produces({MediaType.APPLICATION_JSON})
-    public Uni<Response> getOneTicket(int id) {
-        TicketModel ticketModel = this.ticketService.getTicketById(id);
+    public Uni<Response> getOneTicket(int id) throws JsonProcessingException {
+        String ticketModel = this.ticketService.getTicketById(id);
         return Uni.createFrom().item(Response.ok(ticketModel).build());
     }
 

@@ -1,8 +1,12 @@
 package fr.isen.ticketapp.impl.services;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.isen.ticketapp.interfaces.models.TicketModel;
 import fr.isen.ticketapp.interfaces.models.enums.IMPACT;
 import fr.isen.ticketapp.interfaces.services.TicketService;
+import com.fasterxml.jackson.core.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -18,27 +22,44 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public List<TicketModel> getTickets() { {
-        List<TicketModel> tickets = null;
-        try {
+    public String getTickets() {
+        {
             // Lecture du contenu du fichier JSON depuis le dossier resources
-            String rawJSON = readFromJsonFile("src/main/resources/Ticket.json");
-            JSONParser parser = new JSONParser();
-            JSONObject tickets = (List<TicketModel>) parser.parse(rawJSON);
-            tickets = new ObjectMapper().readValue(rawJSON,List<TicketModel>);
-            return tickets;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return "Erreur lors de la lecture du fichier JSON : " + e.getMessage();
+            String rawJSON = null;
+            try {
+                rawJSON = readFromJsonFile("src/main/resources/Ticket.json");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            return rawJSON;
         }
     }
 
     @Override
-    public TicketModel getTicketById(int id) {
-        List<TicketModel> tickets = getTickets();
-        ticket.titre = "TEST";
-        ticket.impact = IMPACT.Bloquant;
-        return ticket;
+    public String getTicketById(int id) throws JsonProcessingException {
+        String rawJSON = null;
+        try {
+            rawJSON = readFromJsonFile("src/main/resources/Ticket.json");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<TicketModel> tickets = objectMapper.readValue(rawJSON, new TypeReference<List<TicketModel>>() {});
+
+        TicketModel ticket = null;
+        for (TicketModel ticketP : tickets) {
+            if (ticketP.id == id) {
+                ticket = ticketP;
+                break;
+            }
+        }
+
+        ObjectMapper objectMapper2 = new ObjectMapper();
+        String StringTicket = objectMapper2.writeValueAsString(ticket);
+        System.out.println(StringTicket);
+
+        return StringTicket;
     }
 
     @Override

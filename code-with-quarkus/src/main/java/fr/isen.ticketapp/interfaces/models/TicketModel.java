@@ -24,5 +24,4 @@ public class TicketModel {
     public PosteInfoModel poste_info;
 
     public String type_demande;
-
 }

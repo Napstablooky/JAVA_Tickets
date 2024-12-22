@@ -1,12 +1,14 @@
 package fr.isen.ticketapp.interfaces.services;
 
 import java.util.List;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
 import fr.isen.ticketapp.interfaces.models.TicketModel;
 
 public interface TicketService {
-    List<TicketModel> getTickets();
+    String getTickets();
 
-    TicketModel getTicketById(final int id);
+    String getTicketById(final int id) throws JsonProcessingException;
 
     TicketModel addTicket(final TicketModel ticket);
 
