@@ -5,16 +5,9 @@ import fr.isen.ticketapp.impl.services.TicketServiceImpl;
 import fr.isen.ticketapp.interfaces.models.TicketModel;
 import fr.isen.ticketapp.interfaces.services.TicketService;
 import io.smallrye.mutiny.Uni;
-import jakarta.json.Json;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-
-import javax.print.DocFlavor;
-import javax.print.attribute.standard.Media;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
 
 @Path("/ticket")
@@ -29,7 +22,7 @@ public class TicketResource {
     @Path("/all")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Uni<Response> GetTickets() throws JsonProcessingException {
+    public Uni<Response> getTickets() throws JsonProcessingException {
         List<TicketModel> tickets = this.ticketService.getTickets();
         return Uni.createFrom().item(Response.ok(tickets).build());
     }
@@ -41,8 +34,8 @@ public class TicketResource {
         return Uni.createFrom()
                 .item(() -> {
                     try {
-                        TicketModel ticketModel = this.ticketService.getTicketById(id);
-                        return Response.ok(ticketModel).build();
+                        TicketModel ticket = this.ticketService.getTicketById(id);
+                        return Response.ok(ticket).build();
                     } catch (Exception e) {
                         return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                                 .entity("Erreur interne : " + e.getMessage())
@@ -54,7 +47,7 @@ public class TicketResource {
     @Path("/del")
     @DELETE
     public String removeTicket(@QueryParam("id") int id) throws JsonProcessingException {
-        return "Le ticket " + id + " a bien été supprimé.";
+        return "Le ticket numéro " + id + " a bien été supprimé.";
     }
 
     @Path("/add")

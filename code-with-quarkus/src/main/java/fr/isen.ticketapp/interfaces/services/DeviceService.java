@@ -1,17 +1,19 @@
 package fr.isen.ticketapp.interfaces.services;
 
 import java.util.List;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
 import fr.isen.ticketapp.interfaces.models.PosteInfoModel;
 
 public interface DeviceService {
-    List<PosteInfoModel> getDevices();
+    List<PosteInfoModel> getDevices() throws JsonProcessingException;
 
-    PosteInfoModel getDeviceById(final int id);
+    PosteInfoModel getDeviceById(final int id) throws JsonProcessingException;
 
-    PosteInfoModel addDevice(final PosteInfoModel device);
+    PosteInfoModel addOneDevice(final PosteInfoModel device);
 
-    PosteInfoModel removeDevice(final int id);
+    PosteInfoModel removeOneDevice(final int id);
 
-    PosteInfoModel updateDevice(final PosteInfoModel device);
+    Integer updateOneDevice(final PosteInfoModel device);
 
 }
