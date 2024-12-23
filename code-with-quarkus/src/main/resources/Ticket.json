@@ -55,7 +55,7 @@
       "nom": "Jean Dupont",
       "email": "jean.dupont@example.com",
       "password": "password456",
-      "last_connexion": "12/12/2024 09:30:00",
+      "last_connexion": "2024-12-12",
       "statut": "False",
       "role": "Intervenant"
     },
@@ -66,16 +66,16 @@
         "nom": "Jean Dupont",
         "email": "jean.dupont@example.com",
         "password": "password456",
-        "last_connexion": "12/12/2024 09:30:00",
+        "last_connexion": "2024-12-12",
         "statut": "False",
         "role": "Intervenant"
       },
-     "etat": "En_Maintenance",
+     "etat": "En_maintenance",
         "configuration": {
             "processeur": "Intel i5",
-            "ram": "16GB DDR4",
+            "RAM": "16GB DDR4",
             "stockage": "1TB SSD",
-            "carteGraphique": "NVIDIA RTX 3060",
+            "gpu": "NVIDIA RTX 3060",
             "os": "Windows 11 Pro",
             "ecran": "27 pouces, 144Hz"          
       }
@@ -89,13 +89,13 @@
     "date_crea": "2024-12-12",
     "date_maj": "2024-12-12",
     "impact": "Majeur",
-    "etat": "En_Cours",
+    "etat": "En_cours",
     "createur": {
       "id": "3",
       "nom": "Claire Durand",
       "email": "claire.durand@example.com",
       "password": "password789",
-      "last_connexion": "12/12/2024 10:10:00",
+      "last_connexion": "2024-12-12",
       "statut": "True",
       "role": "Utilisateur"
     },
@@ -106,16 +106,16 @@
         "nom": "Claire Durand",
         "email": "claire.durand@example.com",
         "password": "password789",
-        "last_connexion": "12/12/2024 10:10:00",
+        "last_connexion": "2024-12-12",
         "statut": "True",
         "role": "Utilisateur"
       },
       "etat": "En_Fonction",
         "configuration": {
             "processeur": "Intel i5",
-            "ram": "16GB DDR4",
+            "RAM": "16GB DDR4",
             "stockage": "1TB SSD",
-            "carteGraphique": "NVIDIA RTX 3060",
+            "gpu": "NVIDIA RTX 3060",
             "os": "Windows 11 Pro",
             "ecran": "27 pouces, 144Hz"
             } 
@@ -135,7 +135,7 @@
       "nom": "Marc Leblanc",
       "email": "marc.leblanc@example.com",
       "password": "password321",
-      "last_connexion": "12/12/2024 11:15:00",
+      "last_connexion": "2024-12-12",
       "statut": "False",
       "role": "Intervenant"
     },
@@ -146,16 +146,16 @@
         "nom": "Marc Leblanc",
         "email": "marc.leblanc@example.com",
         "password": "password321",
-        "last_connexion": "12/12/2024 11:15:00",
+        "last_connexion": "2024-12-12",
         "statut": "False",
         "role": "Intervenant"
       },
-     "etat": "En_Commande",
+     "etat": "En_commande",
         "configuration": {
             "processeur": "Intel i5",
-            "ram": "16GB DDR4",
+            "RAM": "16GB DDR4",
             "stockage": "1TB SSD",
-            "carteGraphique": "NVIDIA RTX 3060",
+            "gpu": "NVIDIA RTX 3060",
             "os": "Windows 11 Pro",
             "ecran": "27 pouces, 144Hz"
             }  
@@ -176,7 +176,7 @@
       "nom": "Sophie Laurent",
       "email": "sophie.laurent@example.com",
       "password": "password654",
-      "last_connexion": "12/12/2024 12:20:00",
+      "last_connexion": "2024-12-12",
       "statut": "True",
       "role": "Utilisateur"
     },
@@ -187,16 +187,16 @@
         "nom": "Sophie Laurent",
         "email": "sophie.laurent@example.com",
         "password": "password654",
-        "last_connexion": "12/12/2024 12:20:00",
+        "last_connexion": "2024-12-12",
         "statut": "True",
         "role": "Utilisateur"
       },
       "etat": "En_Fonction",
       "configuration": {
           "processeur": "Intel i5",
-          "ram": "16GB DDR4",
+          "RAM": "16GB DDR4",
           "stockage": "1TB SSD",
-          "carteGraphique": "NVIDIA RTX 3060",
+          "gpu": "NVIDIA RTX 3060",
           "os": "Windows 11 Pro",
           "ecran": "27 pouces, 144Hz"
       }
