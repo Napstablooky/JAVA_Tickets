@@ -58,9 +58,9 @@ public class TicketResource {
 
     @Path("/del")
     @DELETE
-    public String removeTicket(@QueryParam("id") int id) {
+    public String removeTicket(@QueryParam("id") int id) throws JsonProcessingException {
 
-        return "Le ticket " + id + " a bien été supprimé.";
+        return "Le ticket " + id + " a bien été supprimé.";// Le voici : " + this.ticketService.getTicketById(id);
     }
 
     @Path("/add")
