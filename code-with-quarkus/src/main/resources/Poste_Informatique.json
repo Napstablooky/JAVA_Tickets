@@ -2,9 +2,7 @@
     "postes": [
       {
         "id": "1",
-        "utilisateurId": "1",
-        "nom": "PC-Bureau-01",
-        "adresseIP": "192.168.1.101",
+        "user": "1",
         "etat": "en fonction",
         "configuration": {
       "processeur": "Intel i5",
@@ -18,9 +16,7 @@
       },
       {
         "id": "2",
-        "utilisateurId": "2",
-        "nom": "PC-Bureau-02",
-        "adresseIP": "192.168.1.102",
+        "user": "2",
         "etat": "en maintenance",
         "configuration": {
             "processeur": "Intel i5",
@@ -33,9 +29,7 @@
       },
       {
         "id": "3",
-        "utilisateurId": "3",
-        "nom": "PC-Bureau-03",
-        "adresseIP": "192.168.1.103",
+        "user": "3",
         "etat": "en fonction",
         "configuration": {
             "processeur": "Intel i5",
@@ -48,9 +42,7 @@
         },
       {
         "id": "4",
-        "utilisateurId": "4",
-        "nom": "PC-Bureau-04",
-        "adresseIP": "192.168.1.104",
+        "user": "4",
         "etat": "en commande",
         "configuration": {
             "processeur": "Intel i5",
@@ -63,9 +55,7 @@
         },
       {
         "id": "5",
-        "utilisateurId": "5",
-        "nom": "PC-Bureau-05",
-        "adresseIP": "192.168.1.200",
+        "user": "5",
         "etat": "en fonction",
         "configuration": {
             "processeur": "Intel i5",
