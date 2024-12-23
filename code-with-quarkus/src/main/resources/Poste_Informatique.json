@@ -33,7 +33,7 @@
       "statut": "False",
       "role": "Intervenant"
        },
-        "etat": "En_Maintenance",
+        "etat": "En_maintenance",
         "configuration": {
             "processeur": "Intel i5",
             "ram": "16GB DDR4",
@@ -75,7 +75,7 @@
       "statut": "False",
       "role": "Intervenant"
         },
-        "etat": "En_Commande",
+        "etat": "En_commande",
         "configuration": {
             "processeur": "Intel i5",
             "ram": "16GB DDR4",
