@@ -1,5 +1,4 @@
-  {
-    "PosteInfoModel": [
+[
       {
         "id": "1",
         "user": "1",
@@ -20,7 +19,7 @@
         "etat": "en maintenance",
         "configuration": {
             "processeur": "Intel i5",
-            "ram": "16GB DDR4",
+            "RAM": "16GB DDR4",
             "stockage": "1TB SSD",
             "carteGraphique": "NVIDIA RTX 3060",
             "os": "Windows 11 Pro",
@@ -33,7 +32,7 @@
         "etat": "en fonction",
         "configuration": {
             "processeur": "Intel i5",
-            "ram": "16GB DDR4",
+            "RAM": "16GB DDR4",
             "stockage": "1TB SSD",
             "carteGraphique": "NVIDIA RTX 3060",
             "os": "Windows 11 Pro",
@@ -67,6 +66,5 @@
             }      
         }
     ]
-  }
   
   

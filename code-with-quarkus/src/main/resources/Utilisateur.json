@@ -1,5 +1,4 @@
-{
-    "UserModel": [
+[
       {
         "id": "1",
         "nom": "Alice Martin",
@@ -45,6 +44,4 @@
         "role": "utilisateur"
       }
     ]
-  }
-  
   

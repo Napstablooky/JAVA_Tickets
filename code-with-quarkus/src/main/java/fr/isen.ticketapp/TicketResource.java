@@ -11,6 +11,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import javax.print.DocFlavor;
+import javax.print.attribute.standard.Media;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -58,18 +59,23 @@ public class TicketResource {
     @Path("/del")
     @DELETE
     public String removeTicket(@QueryParam("id") int id) {
+
         return "Le ticket " + id + " a bien été supprimé.";
     }
 
     @Path("/add")
     @POST
-    public String addTicket(@QueryParam("ticket") TicketModel ticket) {
+    @Consumes(MediaType.APPLICATION_JSON)
+    public String addTicket(TicketModel ticket) {
+
         return "Le ticket a bien été ajouté.";
     }
 
     @Path("/update")
     @PUT
-    public String updateTicket(@QueryParam("ticket") TicketModel ticket) {
+    @Consumes(MediaType.APPLICATION_JSON)
+    public String updateTicket(TicketModel ticket) {
+
         return "Le ticket numéro " + ticket.id + " a bien été mis à jour.";
     }
 }

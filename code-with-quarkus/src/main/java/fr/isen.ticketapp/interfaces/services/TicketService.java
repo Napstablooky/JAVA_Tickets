@@ -10,10 +10,10 @@ public interface TicketService {
 
     String getTicketById(final int id) throws JsonProcessingException;
 
-    TicketModel addTicket(final TicketModel ticket);
+    TicketModel addOneTicket(final TicketModel ticket);
 
-    TicketModel removeTicket(final int id);
+    TicketModel removeOneTicket(final int id);
 
-    Integer updateTicket(final TicketModel ticket);
+    Integer updateOneTicket(final TicketModel ticket);
 
 }

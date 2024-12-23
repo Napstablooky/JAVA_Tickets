@@ -66,18 +66,18 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public TicketModel addTicket(TicketModel ticket) {
+    public TicketModel addOneTicket(TicketModel ticket) {
         return null;
     }
 
     @Override
-    public TicketModel removeTicket(int id) {
+    public TicketModel removeOneTicket(int id) {
 
         return null;
     }
 
     @Override
-    public Integer updateTicket(TicketModel ticket) {
+    public Integer updateOneTicket(TicketModel ticket) {
         return 0;
     }
 }

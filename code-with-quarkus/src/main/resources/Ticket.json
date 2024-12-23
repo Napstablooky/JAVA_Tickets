@@ -1,25 +1,55 @@
-{
-    "TicketModel": [
+[
       {
         "id": "1",
         "titre": "Problème démarrage",
         "description": "L'ordinateur ne démarre pas malgré plusieurs tentatives.",
-        "date_crea": "12/12/2024 09:00:00",
-        "date_maj": "12/12/2024 09:15:00",
+        "date_crea": "2024-12-12",
+        "date_maj": "2024-12-12",
         "impact": "Bloquant",
-        "etat": "ouvert",
-        "createur": "1",
-        "poste_info": "1",
+        "etat": "Ouvert",
+        "createur": {
+          "id": "1",
+          "nom": "Alice Martin",
+          "email": "alice.martin@example.com",
+          "password": "password123",
+          "last_connexion": "2024-12-12",
+          "statut": "True",
+          "role": "Utilisateur"
+        },
+        "poste_info": {
+          "id": "1",
+          "user": {
+            "id": "1",
+            "nom": "Alice Martin",
+            "email": "alice.martin@example.com",
+            "password": "password123",
+            "last_connexion": "2024-12-12",
+            "statut": "True",
+            "role": "Utilisateur"
+          },
+          "etat": "En_Fonction",
+          "configuration": {
+            "processeur": "Intel i5",
+            "RAM": "16GB DDR4",
+            "stockage": "1TB SSD",
+            "gpu": "NVIDIA RTX 3060",
+            "os": "Windows 11 Pro",
+            "ecran": "27 pouces, 144Hz"
+          }
+
+        },
         "type_demande": "Matériel"
       },
+
+
       {
         "id": "2",
         "titre": "Problème logiciel comptabilité",
         "description": "Le logiciel ne se connecte pas au serveur.",
-        "date_crea": "12/12/2024 09:20:00",
-        "date_maj": "12/12/2024 09:30:00",
+        "date_crea": "2024-12-12",
+        "date_maj": "2024-12-12",
         "impact": "Majeur",
-        "etat": "ouvert",
+        "etat": "Ouvert",
        "createur": "2",
        "poste_info": "2",
         "type_demande": "Logiciel"
@@ -28,8 +58,8 @@
         "id": "3",
         "titre": "Problème réseau",
         "description": "Connexion intermittente au réseau local.",
-        "date_crea": "12/12/2024 10:00:00",
-        "date_maj": "12/12/2024 10:10:00",
+        "date_crea": "2024-12-12",
+        "date_maj": "2024-12-12",
         "impact": "Majeur",
         "etat": "en cours",
         "createur": "3",
@@ -40,8 +70,8 @@
         "id": "4",
         "titre": "Problème d'imprimante",
         "description": "L'imprimante ne répond pas et affiche une erreur E23.",
-        "date_crea": "12/12/2024 11:00:00",
-        "date_maj": "12/12/2024 11:15:00",
+        "date_crea": "2024-12-12",
+        "date_maj": "2024-12-12",
         "impact": "Mineur",
         "etat": "ouvert",
         "createur": "4",
@@ -52,8 +82,8 @@
         "id": "5",
         "titre": "Problème de mise à jour",
         "description": "Le système refuse d'installer les mises à jour Windows.",
-        "date_crea": "12/12/2024 12:00:00",
-        "date_maj": "12/12/2024 12:20:00",
+        "date_crea": "2024-12-12",
+        "date_maj": "2024-12-12",
         "impact": "Majeur",
         "etat": "ouvert",
         "createur": "5",
@@ -61,5 +91,3 @@
         "type_demande": "Logiciel"
       }
     ]
-  }
-  
