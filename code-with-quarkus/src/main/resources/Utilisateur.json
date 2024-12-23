@@ -4,8 +4,8 @@
         "id": "1",
         "nom": "Alice Martin",
         "email": "alice.martin@example.com",
-        "motDePasse": "password123",
-        "dateDerniereConnexion": "12/12/2024 09:15:00",
+        "password": "password123",
+        "last_connexion": "12/12/2024 09:15:00",
         "statut": "actif",
         "role": "utilisateur"
       },
@@ -13,16 +13,16 @@
         "id": "2",
         "nom": "Jean Dupont",
         "email": "jean.dupont@example.com",
-        "motDePasse": "password456",
-        "dateDerniereConnexion": "12/12/2024 09:30:00",
+        "password": "password456",
+        "last_connexion": "12/12/2024 09:30:00",
         "statut": "inactif",
         "role": "intervenant"
       }, {
         "id": "3",
         "nom": "Claire Durand",
         "email": "claire.durand@example.com",
-        "motDePasse": "password789",
-        "dateDerniereConnexion": "12/12/2024 10:10:00",
+        "password": "password789",
+        "last_connexion": "12/12/2024 10:10:00",
         "statut": "actif",
         "role": "utilisateur"
       },
@@ -30,8 +30,8 @@
         "id": "4",
         "nom": "Marc Leblanc",
         "email": "marc.leblanc@example.com",
-        "motDePasse": "password321",
-        "dateDerniereConnexion": "12/12/2024 11:15:00",
+        "password": "password321",
+        "last_connexion": "12/12/2024 11:15:00",
         "statut": "inactif",
         "role": "intervenant"
       },
@@ -39,8 +39,8 @@
         "id": "5",
         "nom": "Sophie Laurent",
         "email": "sophie.laurent@example.com",
-        "motDePasse": "password654",
-        "dateDerniereConnexion": "12/12/2024 12:20:00",
+        "password": "password654",
+        "last_connexion": "12/12/2024 12:20:00",
         "statut": "actif",
         "role": "utilisateur"
       }
