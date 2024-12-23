@@ -4,7 +4,7 @@ import java.util.List;
 import fr.isen.ticketapp.interfaces.models.UserModel;
 
 public interface UserService {
-    List<UserModel> getUsers();
+    String getUsers();
 
     UserModel getUserById(final int id);
 
