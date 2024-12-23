@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class UserServiceImpl implements UserService {
 
-    private final String filePath = "src/main/resources/User.json";
+    private final String filePath = "src/main/resources/Utilisateur.json";
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     private List<UserModel> readUsers() throws IOException {

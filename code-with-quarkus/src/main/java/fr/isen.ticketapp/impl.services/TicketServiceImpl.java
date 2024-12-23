@@ -23,7 +23,7 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public String getTickets() {
+    public List<TicketModel> getTickets() throws JsonProcessingException {
         {
             // Lecture du contenu du fichier JSON depuis le dossier resources
             String rawJSON = null;
@@ -32,12 +32,18 @@ public class TicketServiceImpl implements TicketService {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            return rawJSON;
+
+            ObjectMapper objectMapper = new ObjectMapper();
+
+            // Lecture de la liste de tickets
+            List<TicketModel> tickets = objectMapper.readValue(rawJSON, new TypeReference<List<TicketModel>>() {});
+
+            return tickets;
         }
     }
 
     @Override
-    public String getTicketById(int id) throws JsonProcessingException {
+    public TicketModel getTicketById(int id) throws JsonProcessingException {
         String rawJSON;
         try {
             rawJSON = Files.readString(Paths.get("src/main/resources/Ticket.json"));
@@ -51,18 +57,13 @@ public class TicketServiceImpl implements TicketService {
         // Lecture de la liste de tickets
         List<TicketModel> tickets = objectMapper.readValue(rawJSON, new TypeReference<List<TicketModel>>() {});
 
-        // Recherche du ticket par ID avec Stream (Java 8+)
-        Optional<TicketModel> ticket = tickets.stream()
-                .filter(ticketP -> ticketP.id == id)
-                .findFirst();
-
-        // Gestion si le ticket est introuvable
-        if (ticket.isEmpty()) {
-            throw new RuntimeException("Ticket avec l'ID " + id + " introuvable");
+        for (TicketModel ticket : tickets) {
+            if (ticket.id == id) {
+                return ticket; // Ticket trouvé
+            }
         }
 
-        // Conversion du ticket en JSON et retour
-        return objectMapper.writeValueAsString(ticket.get());
+        throw new RuntimeException("Ticket avec l'ID " + id + " introuvable.");
     }
 
     @Override

@@ -6,9 +6,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import fr.isen.ticketapp.interfaces.models.TicketModel;
 
 public interface TicketService {
-    String getTickets();
+    List<TicketModel> getTickets() throws JsonProcessingException;
 
-    String getTicketById(final int id) throws JsonProcessingException;
+    TicketModel getTicketById(final int id) throws JsonProcessingException;
 
     TicketModel addOneTicket(final TicketModel ticket);
 

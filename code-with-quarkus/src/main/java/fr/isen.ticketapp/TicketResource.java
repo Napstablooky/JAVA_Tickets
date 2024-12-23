@@ -30,7 +30,7 @@ public class TicketResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<Response> GetTickets() throws JsonProcessingException {
-        String tickets = this.ticketService.getTickets();
+        List<TicketModel> tickets = this.ticketService.getTickets();
         return Uni.createFrom().item(Response.ok(tickets).build());
     }
 
@@ -41,12 +41,7 @@ public class TicketResource {
         return Uni.createFrom()
                 .item(() -> {
                     try {
-                        String ticketModel = this.ticketService.getTicketById(id);
-                        if (ticketModel == null || ticketModel.isEmpty()) {
-                            return Response.status(Response.Status.NOT_FOUND)
-                                    .entity("Ticket avec l'ID " + id + " introuvable")
-                                    .build();
-                        }
+                        TicketModel ticketModel = this.ticketService.getTicketById(id);
                         return Response.ok(ticketModel).build();
                     } catch (Exception e) {
                         return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
