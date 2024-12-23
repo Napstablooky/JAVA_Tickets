@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Optional;
 
 public class TicketServiceImpl implements TicketService {
 
@@ -37,29 +38,31 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public String getTicketById(int id) throws JsonProcessingException {
-        String rawJSON = null;
+        String rawJSON;
         try {
-            rawJSON = readFromJsonFile("src/main/resources/Ticket.json");
+            rawJSON = Files.readString(Paths.get("src/main/resources/Ticket.json"));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Erreur lors de la lecture du fichier JSON", e);
         }
 
+        // Instanciation de l'ObjectMapper
         ObjectMapper objectMapper = new ObjectMapper();
+
+        // Lecture de la liste de tickets
         List<TicketModel> tickets = objectMapper.readValue(rawJSON, new TypeReference<List<TicketModel>>() {});
 
-        TicketModel ticket = null;
-        for (TicketModel ticketP : tickets) {
-            if (ticketP.id == id) {
-                ticket = ticketP;
-                break;
-            }
+        // Recherche du ticket par ID avec Stream (Java 8+)
+        Optional<TicketModel> ticket = tickets.stream()
+                .filter(ticketP -> ticketP.id == id)
+                .findFirst();
+
+        // Gestion si le ticket est introuvable
+        if (ticket.isEmpty()) {
+            throw new RuntimeException("Ticket avec l'ID " + id + " introuvable");
         }
 
-        ObjectMapper objectMapper2 = new ObjectMapper();
-        String StringTicket = objectMapper2.writeValueAsString(ticket);
-        System.out.println(StringTicket);
-
-        return StringTicket;
+        // Conversion du ticket en JSON et retour
+        return objectMapper.writeValueAsString(ticket.get());
     }
 
     @Override

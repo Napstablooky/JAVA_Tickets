@@ -6,10 +6,7 @@ import fr.isen.ticketapp.interfaces.models.TicketModel;
 import fr.isen.ticketapp.interfaces.services.TicketService;
 import io.smallrye.mutiny.Uni;
 import jakarta.json.Json;
-import jakarta.ws.rs.DELETE;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -28,7 +25,7 @@ public class TicketResource {
         this.ticketService = new TicketServiceImpl();
     }
 
-
+    @Path("/all")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<Response> GetTickets() throws JsonProcessingException {
@@ -36,17 +33,43 @@ public class TicketResource {
         return Uni.createFrom().item(Response.ok(tickets).build());
     }
 
+    @Path("/one")
     @GET
-    @Path("/{id}")
-    @Produces({MediaType.APPLICATION_JSON})
-    public Uni<Response> getOneTicket(int id) throws JsonProcessingException {
-        String ticketModel = this.ticketService.getTicketById(id);
-        return Uni.createFrom().item(Response.ok(ticketModel).build());
+    @Produces(MediaType.APPLICATION_JSON)
+    public Uni<Response> getTicketById(@QueryParam("id") int id) {
+        return Uni.createFrom()
+                .item(() -> {
+                    try {
+                        String ticketModel = this.ticketService.getTicketById(id);
+                        if (ticketModel == null || ticketModel.isEmpty()) {
+                            return Response.status(Response.Status.NOT_FOUND)
+                                    .entity("Ticket avec l'ID " + id + " introuvable")
+                                    .build();
+                        }
+                        return Response.ok(ticketModel).build();
+                    } catch (Exception e) {
+                        return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                                .entity("Erreur interne : " + e.getMessage())
+                                .build();
+                    }
+                });
     }
 
+    @Path("/del")
     @DELETE
-    @Path("/{id}")
-    public String DelTicketById(int id) {
-        return "Le ticket " + id + "a bien été supprimé.";
+    public String removeTicket(@QueryParam("id") int id) {
+        return "Le ticket " + id + " a bien été supprimé.";
+    }
+
+    @Path("/add")
+    @POST
+    public String addTicket(@QueryParam("ticket") TicketModel ticket) {
+        return "Le ticket a bien été ajouté.";
+    }
+
+    @Path("/update")
+    @PUT
+    public String updateTicket(@QueryParam("ticket") TicketModel ticket) {
+        return "Le ticket numéro " + ticket.id + " a bien été mis à jour.";
     }
 }
