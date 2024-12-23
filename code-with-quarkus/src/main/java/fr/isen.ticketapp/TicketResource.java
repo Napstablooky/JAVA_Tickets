@@ -54,15 +54,13 @@ public class TicketResource {
     @Path("/del")
     @DELETE
     public String removeTicket(@QueryParam("id") int id) throws JsonProcessingException {
-
-        return "Le ticket " + id + " a bien été supprimé.";// Le voici : " + this.ticketService.getTicketById(id);
+        return "Le ticket " + id + " a bien été supprimé.";
     }
 
     @Path("/add")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public String addTicket(TicketModel ticket) {
-
         return "Le ticket a bien été ajouté.";
     }
 
@@ -70,7 +68,6 @@ public class TicketResource {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public String updateTicket(TicketModel ticket) {
-
         return "Le ticket numéro " + ticket.id + " a bien été mis à jour.";
     }
 }

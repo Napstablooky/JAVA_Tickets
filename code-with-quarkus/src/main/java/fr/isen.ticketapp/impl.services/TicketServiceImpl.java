@@ -26,7 +26,7 @@ public class TicketServiceImpl implements TicketService {
     public List<TicketModel> getTickets() throws JsonProcessingException {
         {
             // Lecture du contenu du fichier JSON depuis le dossier resources
-            String rawJSON = null;
+            String rawJSON;
             try {
                 rawJSON = readFromJsonFile("src/main/resources/Ticket.json");
             } catch (IOException e) {

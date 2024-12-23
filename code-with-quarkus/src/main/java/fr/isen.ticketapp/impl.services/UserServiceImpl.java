@@ -3,7 +3,6 @@ package fr.isen.ticketapp.impl.services;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import fr.isen.ticketapp.interfaces.models.enums.ROLE;
 import fr.isen.ticketapp.interfaces.models.UserModel;
 import fr.isen.ticketapp.interfaces.services.UserService;
 
@@ -21,9 +20,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String getUsers() {
+    public List<UserModel> getUsers() {
         // Lecture du contenu du fichier JSON depuis le dossier resources
-        String rawJSON = null;
+        String rawJSON;
         try {
             rawJSON = readFromJsonFile("src/main/resources/Utilisateur.json");
         } catch (IOException e) {
@@ -33,18 +32,10 @@ public class UserServiceImpl implements UserService {
         ObjectMapper objectMapper = new ObjectMapper();
 
         // Lecture de la liste de users
-        List<UserModel> users = null;
         try {
-            users = objectMapper.readValue(rawJSON, new TypeReference<List<UserModel>>() {});
+            return objectMapper.readValue(rawJSON, new TypeReference<List<UserModel>>() {});
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Erreur lors du parsing JSON", e); // Gérer l'exception JsonProcessingException
-        }
-
-        // Convertir la liste des users en une chaîne JSON
-        try {
-            return objectMapper.writeValueAsString(users); // Convertir la liste en chaîne JSON
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException("Erreur lors de la conversion des utilisateurs en JSON", e);
         }
     }
 
@@ -52,7 +43,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserModel getUserById(int id) {
         // Implémentez votre logique pour récupérer un utilisateur par ID
-        String rawJSON = null;
+        String rawJSON;
         try {
             rawJSON = readFromJsonFile("src/main/resources/Utilisateur.json");
         } catch (IOException e) {
@@ -62,7 +53,7 @@ public class UserServiceImpl implements UserService {
         ObjectMapper objectMapper = new ObjectMapper();
 
         // Désérialiser le fichier JSON en liste d'utilisateurs
-        List<UserModel> users = null;
+        List<UserModel> users;
         try {
             users = objectMapper.readValue(rawJSON, new TypeReference<List<UserModel>>() {});
         } catch (JsonProcessingException e) {

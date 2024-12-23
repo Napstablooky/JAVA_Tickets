@@ -23,11 +23,8 @@ public class UserResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<Response> GetUsers() throws JsonProcessingException {
-        // Obtenez la chaîne JSON des utilisateurs depuis le service
-        String jsonUsers = this.userService.getUsers();
-
-        // Retourner la réponse avec la chaîne JSON des utilisateurs
-        return Uni.createFrom().item(() -> Response.ok(jsonUsers).build());
+        List<UserModel> Users = this.userService.getUsers();
+        return Uni.createFrom().item(() -> Response.ok(Users).build());
     }
 
     @Path("/one")
