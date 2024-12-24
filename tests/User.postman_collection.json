@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "11bfed7f-a056-40b7-b099-46ae6b3d732f",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31182326",
+		"_collection_link": "https://webdev-2024-1849.postman.co/workspace/Webdev-2024-Workspace~219c50dc-6ed6-4576-8f50-f6241ab89869/collection/31459461-11bfed7f-a056-40b7-b099-46ae6b3d732f?action=share&source=collection_link&creator=31182326"
+	},
+	"item": [
+		{
+			"name": "getUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/userJSON/all",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"userJSON",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/userJSON/one?id=1",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"userJSON",
+						"one"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"5\",\r\n        \"nom\": \"Sophie Laurent\",\r\n        \"email\": \"sophie.laurent@example.com\",\r\n        \"password\": \"password654\",\r\n        \"last_connexion\": \"2024-12-12\",\r\n        \"statut\": \"True\",\r\n        \"role\": \"Utilisateur\"\r\n      }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/userJSON/add",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"userJSON",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"4\",\r\n        \"nom\": \"Marc Leblanc\",\r\n        \"email\": \"marc.leblanc@example.com\",\r\n        \"password\": \"password321\",\r\n        \"last_connexion\": \"2024-12-12\",\r\n        \"statut\": \"False\",\r\n        \"role\": \"Intervenant\"\r\n      }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/userJSON/update",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"userJSON",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/userJSON/del?id=1",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"userJSON",
+						"del"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

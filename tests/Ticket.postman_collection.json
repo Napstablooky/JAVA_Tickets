@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "c3ae3a7c-f9b4-4a01-ba8e-8aaebfc63b4b",
+		"name": "Ticket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31182326",
+		"_collection_link": "https://webdev-2024-1849.postman.co/workspace/Webdev-2024-Workspace~219c50dc-6ed6-4576-8f50-f6241ab89869/collection/31459461-c3ae3a7c-f9b4-4a01-ba8e-8aaebfc63b4b?action=share&source=collection_link&creator=31182326"
+	},
+	"item": [
+		{
+			"name": "getTickets",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/ticketJSON/all",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"ticketJSON",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTicketById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/ticketJSON/one?id=1",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"ticketJSON",
+						"one"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addTicket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titre\": \"Problème de mise à jour\",\r\n    \"description\": \"Le système refuse d'installer les mises à jour Windows.\",\r\n    \"date_crea\": \"2024-12-12\",\r\n    \"date_maj\": \"2024-12-12\",\r\n    \"impact\": \"Majeur\",\r\n    \"etat\": \"Ouvert\",\r\n    \"createur_id\": 2,\r\n    \"poste_info_id\": 2,\r\n    \"type_demande\": \"Logiciel\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/ticketJSON/add",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"ticketJSON",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTicket",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 6,\r\n    \"titre\": \"Problème de mise à jour\",\r\n    \"description\": \"Le système refuse d'installer les mises à jour Windows.\",\r\n    \"date_crea\": \"2024-12-12\",\r\n    \"date_maj\": \"2024-12-24\",\r\n    \"impact\": \"Majeur\",\r\n    \"etat\": \"Resolu\",\r\n    \"createur_id\": 2,\r\n    \"poste_info_id\": 2,\r\n    \"type_demande\": \"Logiciel\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/ticketJSON/update",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"ticketJSON",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeTicket",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/ticketJSON/del?id=1",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"ticketJSON",
+						"del"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

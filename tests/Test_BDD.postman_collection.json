@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "8a3b01aa-9c05-4265-9130-5fa7935e25e7",
+		"name": "Test BDD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31182326",
+		"_collection_link": "https://webdev-2024-1849.postman.co/workspace/Webdev-2024-Workspace~219c50dc-6ed6-4576-8f50-f6241ab89869/collection/31184262-8a3b01aa-9c05-4265-9130-5fa7935e25e7?action=share&source=collection_link&creator=31182326"
+	},
+	"item": [
+		{
+			"name": "Ticket",
+			"item": [
+				{
+					"name": "getTickets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/ticketBDD/all",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"ticketBDD",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTicketById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/ticketBDD/one?id=1",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"ticketBDD",
+								"one"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addTicket",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titre\": \"Problème de mise à jour\",\r\n    \"description\": \"Le système refuse d'installer les mises à jour Windows.\",\r\n    \"date_crea\": \"2024-12-12\",\r\n    \"date_maj\": \"2024-12-12\",\r\n    \"impact\": \"Majeur\",\r\n    \"etat\": \"Ouvert\",\r\n    \"createur_id\": 2,\r\n    \"poste_info_id\": 2,\r\n    \"type_demande\": \"Logiciel\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/ticketBDD/add",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"ticketBDD",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTicket",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 8,\r\n    \"titre\": \"Problème de mise à jour\",\r\n    \"description\": \"Le système refuse d'installer les mises à jour Windows.\",\r\n    \"date_crea\": \"2024-12-12\",\r\n    \"date_maj\": \"2024-12-24\",\r\n    \"impact\": \"Majeur\",\r\n    \"etat\": \"Resolu\",\r\n    \"createur_id\": 2,\r\n    \"poste_info_id\": 2,\r\n    \"type_demande\": \"Logiciel\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/ticketBDD/update",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"ticketBDD",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeTicket",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/ticketBDD/delete?id=8",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"ticketBDD",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Device",
+			"item": [
+				{
+					"name": "getDevices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/deviceBDD/all",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"deviceBDD",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDeviceById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/deviceBDD/one?id=2",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"deviceBDD",
+								"one"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addDevice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 4,\r\n    \"etat\": \"En_commande\",\r\n    \"configuration_id\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/deviceBDD/add",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"deviceBDD",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateDevice",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 6,\r\n    \"user_id\": 4,\r\n    \"etat\": \"En_maintenance\",\r\n    \"configuration_id\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/deviceBDD/update",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"deviceBDD",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeDevice",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/deviceBDD/delete?id=6",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"deviceBDD",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "getUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/userBDD/all",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"userBDD",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/userBDD/one?id=3",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"userBDD",
+								"one"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nom\": \"ROTY Robin\",\r\n        \"email\": \"roty.robin@isen.yncrea.fr\",\r\n        \"password\": \"1234\",\r\n        \"last_connexion\": \"2024-12-24\",\r\n        \"statut\": \"True\",\r\n        \"role\": \"Intervenant\"\r\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/userBDD/add",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"userBDD",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 6,\r\n        \"nom\": \"ROTY Robin\",\r\n        \"email\": \"roty.robin@isen.yncrea.fr\",\r\n        \"password\": \"c'est la fin du monde\",\r\n        \"last_connexion\": \"2024-12-24\",\r\n        \"statut\": \"False\",\r\n        \"role\": \"Intervenant\"\r\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/userBDD/update",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"userBDD",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/userBDD/delete?id=6",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"userBDD",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
