@@ -4,15 +4,18 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.isen.ticketapp.interfaces.models.TicketModel;
-import fr.isen.ticketapp.interfaces.models.enums.IMPACT;
 import fr.isen.ticketapp.interfaces.services.TicketService;
-import com.fasterxml.jackson.core.*;
+import jakarta.enterprise.inject.spi.CDI;
+import io.agroal.api.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
-import java.util.Optional;
 
 public class TicketServiceImpl implements TicketService {
 
@@ -64,6 +67,33 @@ public class TicketServiceImpl implements TicketService {
         }
 
         throw new RuntimeException("Ticket avec l'ID " + id + " introuvable.");
+    }
+
+    AgroalDataSource dataSource = CDI.current().select(AgroalDataSource.class).get();
+
+    @Override
+    public TicketModel getTicketByIdBDD(int id) {
+        TicketModel ticketModel = new TicketModel();
+        Connection conn = null;
+        try {
+            conn = dataSource.getConnection();
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM ticket WHERE id =?");
+            stmt.setInt(1,id);
+            ResultSet rs = stmt.executeQuery();
+
+            while(rs.next()){
+                // USE factory here
+                ticketModel.id = rs.getInt(1);
+                ticketModel.titre = rs.getString(2);
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return ticketModel;
     }
 
     @Override
