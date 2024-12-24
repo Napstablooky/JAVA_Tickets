@@ -62,7 +62,7 @@ public class TicketServiceImpl implements TicketService {
 
         for (TicketModel ticket : tickets) {
             if (ticket.id == id) {
-                return ticket; // Ticket trouvé
+                return ticket; 
             }
         }
 

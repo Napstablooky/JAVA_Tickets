@@ -81,13 +81,9 @@ public class DeviceResourceBDD {
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteDevice(@QueryParam("id") int id) {
         try {
-            // Appel au service pour supprimer le device
             deviceService.removeDeviceBDD(id);
-
-            // Retourne une réponse de succès
             return Response.ok("Le device avec l'ID " + id + " a été supprimé avec succès.").build();
         } catch (Exception e) {
-            // Gestion des erreurs
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("Erreur lors de la suppression du device : " + e.getMessage())
                     .build();

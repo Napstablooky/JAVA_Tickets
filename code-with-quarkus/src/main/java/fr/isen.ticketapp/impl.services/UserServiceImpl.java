@@ -47,7 +47,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserModel getUserById(int id) {
-        // Implémentez votre logique pour récupérer un utilisateur par ID
         String rawJSON;
         try {
             rawJSON = readFromJsonFile("src/main/resources/Utilisateur.json");
@@ -68,7 +67,7 @@ public class UserServiceImpl implements UserService {
         // Recherche de l'utilisateur par ID
         for (UserModel user : users) {
             if (user.id == id) {
-                return user;  // Retourner l'utilisateur trouvé
+                return user;  
             }
         }
 
@@ -119,7 +118,7 @@ public class UserServiceImpl implements UserService {
             throw new RuntimeException("Erreur lors de la récupération des users : " + e.getMessage(), e);
         }
 
-        return users; // Retourne la liste des tickets
+        return users; 
     }
 
     @Override

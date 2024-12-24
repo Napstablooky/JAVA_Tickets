@@ -81,13 +81,9 @@ public class TicketResourceBDD {
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteTicket(@QueryParam("id") int id) {
         try {
-            // Appel au service pour supprimer le ticket
             ticketService.removeTicketBDD(id);
-
-            // Retourne une réponse de succès
             return Response.ok("Le ticket avec l'ID " + id + " a été supprimé avec succès.").build();
         } catch (Exception e) {
-            // Gestion des erreurs
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("Erreur lors de la suppression du ticket : " + e.getMessage())
                     .build();

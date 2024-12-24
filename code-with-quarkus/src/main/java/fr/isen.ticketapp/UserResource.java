@@ -1,7 +1,7 @@
 package fr.isen.ticketapp;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper; // Ajout de l'import pour ObjectMapper
+import com.fasterxml.jackson.databind.ObjectMapper; 
 import io.smallrye.mutiny.Uni;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -47,7 +47,6 @@ public class UserResource {
     @Path("/del")
     @DELETE
     public String removeUser(@QueryParam("id") int id) throws JsonProcessingException {
-        // Supposons que la suppression de l'utilisateur se fait ici
         return "L'Utilisateur " + id + " a bien été supprimé.";
     }
 
@@ -55,7 +54,6 @@ public class UserResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public String addUser(UserModel user) {
-        // Vous pouvez ajouter un utilisateur ici
         return "L'Utilisateur a bien été ajouté.";
     }
 
@@ -63,7 +61,6 @@ public class UserResource {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public String updateUser(UserModel user) {
-        // Mise à jour de l'utilisateur
         return "L'Utilisateur numéro " + user.id + " a bien été mis à jour.";
     }
 }

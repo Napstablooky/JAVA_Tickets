@@ -58,7 +58,7 @@ public class DeviceServiceImpl implements DeviceService {
 
         for (PosteInfoModel device : devices) {
             if (device.id == id) {
-                return device; // Ticket trouvé
+                return device; 
             }
         }
 
