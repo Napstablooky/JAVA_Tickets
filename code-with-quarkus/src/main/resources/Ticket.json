@@ -7,37 +7,8 @@
     "date_maj": "2024-12-12",
     "impact": "Bloquant",
     "etat": "Ouvert",
-    "createur": {
-      "id": "1",
-      "nom": "Alice Martin",
-      "email": "alice.martin@example.com",
-      "password": "password123",
-      "last_connexion": "2024-12-12",
-      "statut": "True",
-      "role": "Utilisateur"
-    },
-    "poste_info": {
-      "id": "1",
-      "user": {
-        "id": "1",
-        "nom": "Alice Martin",
-        "email": "alice.martin@example.com",
-        "password": "password123",
-        "last_connexion": "2024-12-12",
-        "statut": "True",
-        "role": "Utilisateur"
-      },
-      "etat": "En_Fonction",
-      "configuration": {
-        "processeur": "Intel i5",
-        "RAM": "16GB DDR4",
-        "stockage": "1TB SSD",
-        "gpu": "NVIDIA RTX 3060",
-        "os": "Windows 11 Pro",
-        "ecran": "27 pouces, 144Hz"
-      }
-
-    },
+    "createur_id": 1,
+    "poste_info_id": 1,
     "type_demande": "Matériel"
   },
 
@@ -50,36 +21,8 @@
     "date_maj": "2024-12-12",
     "impact": "Majeur",
     "etat": "Ouvert",
-    "createur": {
-      "id": "2",
-      "nom": "Jean Dupont",
-      "email": "jean.dupont@example.com",
-      "password": "password456",
-      "last_connexion": "2024-12-12",
-      "statut": "False",
-      "role": "Intervenant"
-    },
-    "poste_info": {
-      "id": "2",
-      "user": {
-        "id": "2",
-        "nom": "Jean Dupont",
-        "email": "jean.dupont@example.com",
-        "password": "password456",
-        "last_connexion": "2024-12-12",
-        "statut": "False",
-        "role": "Intervenant"
-      },
-     "etat": "En_maintenance",
-        "configuration": {
-            "processeur": "Intel i5",
-            "RAM": "16GB DDR4",
-            "stockage": "1TB SSD",
-            "gpu": "NVIDIA RTX 3060",
-            "os": "Windows 11 Pro",
-            "ecran": "27 pouces, 144Hz"          
-      }
-    },
+    "createur_id":  2,
+    "poste_info_id": 2,
     "type_demande": "Logiciel"
   },
   {
@@ -90,36 +33,8 @@
     "date_maj": "2024-12-12",
     "impact": "Majeur",
     "etat": "En_cours",
-    "createur": {
-      "id": "3",
-      "nom": "Claire Durand",
-      "email": "claire.durand@example.com",
-      "password": "password789",
-      "last_connexion": "2024-12-12",
-      "statut": "True",
-      "role": "Utilisateur"
-    },
-    "poste_info": {
-      "id": "3",
-      "user": {
-        "id": "3",
-        "nom": "Claire Durand",
-        "email": "claire.durand@example.com",
-        "password": "password789",
-        "last_connexion": "2024-12-12",
-        "statut": "True",
-        "role": "Utilisateur"
-      },
-      "etat": "En_Fonction",
-        "configuration": {
-            "processeur": "Intel i5",
-            "RAM": "16GB DDR4",
-            "stockage": "1TB SSD",
-            "gpu": "NVIDIA RTX 3060",
-            "os": "Windows 11 Pro",
-            "ecran": "27 pouces, 144Hz"
-            } 
-    },
+    "createur_id": 3,
+    "poste_info_id": 3,
     "type_demande": "Réseau"
   },
   {
@@ -130,37 +45,8 @@
     "date_maj": "2024-12-12",
     "impact": "Mineur",
     "etat": "Ouvert",
-    "createur": {
-      "id": "4",
-      "nom": "Marc Leblanc",
-      "email": "marc.leblanc@example.com",
-      "password": "password321",
-      "last_connexion": "2024-12-12",
-      "statut": "False",
-      "role": "Intervenant"
-    },
-    "poste_info": {
-      "id": "4",
-      "user": {
-        "id": "4",
-        "nom": "Marc Leblanc",
-        "email": "marc.leblanc@example.com",
-        "password": "password321",
-        "last_connexion": "2024-12-12",
-        "statut": "False",
-        "role": "Intervenant"
-      },
-     "etat": "En_commande",
-        "configuration": {
-            "processeur": "Intel i5",
-            "RAM": "16GB DDR4",
-            "stockage": "1TB SSD",
-            "gpu": "NVIDIA RTX 3060",
-            "os": "Windows 11 Pro",
-            "ecran": "27 pouces, 144Hz"
-            }  
-
-    },
+    "createur_id": 4,
+    "poste_info_id": 4,
     "type_demande": "Périphérique"
   },
   {
@@ -171,37 +57,8 @@
     "date_maj": "2024-12-12",
     "impact": "Majeur",
     "etat": "Ouvert",
-    "createur": {
-      "id": "5",
-      "nom": "Sophie Laurent",
-      "email": "sophie.laurent@example.com",
-      "password": "password654",
-      "last_connexion": "2024-12-12",
-      "statut": "True",
-      "role": "Utilisateur"
-    },
-    "poste_info": {
-      "id": "5",
-      "user": {
-        "id": "5",
-        "nom": "Sophie Laurent",
-        "email": "sophie.laurent@example.com",
-        "password": "password654",
-        "last_connexion": "2024-12-12",
-        "statut": "True",
-        "role": "Utilisateur"
-      },
-      "etat": "En_Fonction",
-      "configuration": {
-          "processeur": "Intel i5",
-          "RAM": "16GB DDR4",
-          "stockage": "1TB SSD",
-          "gpu": "NVIDIA RTX 3060",
-          "os": "Windows 11 Pro",
-          "ecran": "27 pouces, 144Hz"
-      }
-
-    },
+    "createur_id": 5,
+    "poste_info_id": 5,
     "type_demande": "Logiciel"
   }
 ]

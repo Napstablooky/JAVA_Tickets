@@ -11,7 +11,7 @@ import fr.isen.ticketapp.impl.services.UserServiceImpl;
 import fr.isen.ticketapp.interfaces.models.UserModel;
 import java.util.List;
 
-@Path("/user")
+@Path("/userJSON")
 public class UserResource {
     private UserService userService;
 

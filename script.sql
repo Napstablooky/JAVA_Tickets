@@ -42,8 +42,8 @@ CREATE TABLE IF NOT EXISTS ticket (
     date_crea DATETIME NOT NULL,
     etat ENUM('Ouvert','En_cours','Resolu','Ferme','Annule') NOT NULL,
     date_maj DATETIME,
-    createur_id INT NOT NULL,
-    poste_info_id INT NOT NULL,
+    createur_id INT,
+    poste_info_id INT,
     type_demande VARCHAR(255) NOT NULL,
     FOREIGN KEY (createur_id) REFERENCES user(id) ON DELETE CASCADE,
     FOREIGN KEY (poste_info_id) REFERENCES poste_info(id) ON DELETE CASCADE

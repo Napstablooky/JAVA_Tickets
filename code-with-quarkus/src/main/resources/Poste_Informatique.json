@@ -1,109 +1,33 @@
 [
       {
-      "id": "1",
-      "user": {
-      "id": "1",
-      "nom": "Alice Martin",
-      "email": "alice.martin@example.com",
-      "password": "password123",
-      "last_connexion": "2024-12-12",
-      "statut": "True",
-      "role": "Utilisateur"
-    },
-      "etat": "En_Fonction",
-      "configuration": {
-      "processeur": "Intel i5",
-      "RAM": "16GB DDR4",
-      "stockage": "1TB SSD",
-      "gpu": "NVIDIA RTX 3060",
-      "os": "Windows 11 Pro",
-      "ecran": "27 pouces, 144Hz"
-        }
-    
-      },
-      {
-      "id": "2",
-      "user": {
-      "id": "2",
-      "nom": "Jean Dupont",
-      "email": "jean.dupont@example.com",
-      "password": "password456",
-      "last_connexion": "2024-12-12",
-      "statut": "False",
-      "role": "Intervenant"
-       },
-        "etat": "En_maintenance",
-        "configuration": {
-            "processeur": "Intel i5",
-            "RAM": "16GB DDR4",
-            "stockage": "1TB SSD",
-            "gpu": "NVIDIA RTX 3060",
-            "os": "Windows 11 Pro",
-            "ecran": "27 pouces, 144Hz"
-            }
-      },
-      {
-      "id": "3",
-      "user": {
-      "id": "3",
-      "nom": "Claire Durand",
-      "email": "claire.durand@example.com",
-      "password": "password789",
-      "last_connexion": "2024-12-12",
-      "statut": "True",
-      "role": "Utilisateur"
-    },
+        "id": "1",
+        "user_id": 1,
         "etat": "En_Fonction",
-        "configuration": {
-            "processeur": "Intel i5",
-            "RAM": "16GB DDR4",
-            "stockage": "1TB SSD",
-            "gpu": "NVIDIA RTX 3060",
-            "os": "Windows 11 Pro",
-            "ecran": "27 pouces, 144Hz"
-            }      
-        },
+        "configuration_id": 1
+      },
       {
-      "id": "4",
-      "user": {
-      "id": "4",
-      "nom": "Marc Leblanc",
-      "email": "marc.leblanc@example.com",
-      "password": "password321",
-      "last_connexion": "2024-12-12",
-      "statut": "False",
-      "role": "Intervenant"
-        },
+        "id": "2",
+        "user_id": 2,
+        "etat": "En_maintenance",
+        "configuration_id": 2
+      },
+      {
+        "id": "3",
+        "user_id": 3,
+        "etat": "En_Fonction",
+        "configuration_id": 3
+      },
+      {
+        "id": "4",
+        "user_id": 4,
         "etat": "En_commande",
-        "configuration": {
-            "processeur": "Intel i5",
-            "RAM": "16GB DDR4",
-            "stockage": "1TB SSD",
-            "gpu": "NVIDIA RTX 3060",
-            "os": "Windows 11 Pro",
-            "ecran": "27 pouces, 144Hz"
-            }      
-        },
+        "configuration_id": 4
+      },
       {
         "id": "5",
-        "user": {
-          "id": "5",
-          "nom": "Sophie Laurent",
-          "email": "sophie.laurent@example.com",
-          "password": "password654",
-          "last_connexion": "2024-12-12",
-          "statut": "True",
-          "role": "Utilisateur"
-        },
+        "user_id": 5,
         "etat": "En_Fonction",
-        "configuration": {
-            "processeur": "Intel i5",
-            "RAM": "16GB DDR4",
-            "stockage": "1TB SSD",
-            "gpu": "NVIDIA RTX 3060",
-            "os": "Windows 11 Pro",
-            "ecran": "27 pouces, 144Hz"
-            }      
+        "configuration_id": 5
         }
-    ]
+]
   

@@ -19,4 +19,10 @@ public interface TicketService {
     TicketModel getTicketByIdBDD(int id);
 
     List<TicketModel> getTicketsBDD();
+
+    void addTicketBDD(TicketModel ticket);
+
+    void updateTicketBDD(TicketModel ticket);
+
+    void removeTicketBDD(int id);
 }

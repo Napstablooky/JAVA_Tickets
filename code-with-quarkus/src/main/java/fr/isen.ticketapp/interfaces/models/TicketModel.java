@@ -19,9 +19,9 @@ public class TicketModel {
 
     public Date date_maj;
 
-    public UserModel createur;
+    public int createur_id;
 
-    public PosteInfoModel poste_info;
+    public int poste_info_id;
 
     public String type_demande;
 }

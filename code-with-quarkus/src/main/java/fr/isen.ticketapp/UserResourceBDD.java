@@ -1,41 +1,42 @@
 package fr.isen.ticketapp;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import fr.isen.ticketapp.impl.services.TicketServiceImpl;
-import fr.isen.ticketapp.interfaces.models.TicketModel;
-import fr.isen.ticketapp.interfaces.services.TicketService;
+import fr.isen.ticketapp.impl.services.UserServiceImpl;
+import fr.isen.ticketapp.interfaces.models.UserModel;
+import fr.isen.ticketapp.interfaces.services.UserService;
 import io.smallrye.mutiny.Uni;
+import io.vertx.ext.auth.User;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
-@Path("/ticketBDD")
-public class TicketResourceBDD {
-    private TicketService ticketService;
+@Path("/userBDD")
+public class UserResourceBDD {
+    private UserService userService;
 
-    public TicketResourceBDD() {
-        this.ticketService = new TicketServiceImpl();
+    public UserResourceBDD() {
+        this.userService = new UserServiceImpl();
     }
 
     @Path("/all")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Uni<Response> getTicketsBDD() throws JsonProcessingException {
-        List<TicketModel> tickets = this.ticketService.getTicketsBDD();
-        return Uni.createFrom().item(Response.ok(tickets).build());
+    public Uni<Response> getUsersBDD() throws JsonProcessingException {
+        List<UserModel> devices = this.userService.getUsersBDD();
+        return Uni.createFrom().item(Response.ok(devices).build());
     }
 
     @Path("/one")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Uni<Response> getTicketByIdBDD(@QueryParam("id") int id) {
+    public Uni<Response> getUserByIdBDD(@QueryParam("id") int id) {
         return Uni.createFrom()
                 .item(() -> {
                     try {
-                        TicketModel ticket = this.ticketService.getTicketByIdBDD(id);
-                        return Response.ok(ticket).build();
+                        UserModel device = this.userService.getUserByIdBDD(id);
+                        return Response.ok(device).build();
                     } catch (Exception e) {
                         return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                                 .entity("Erreur interne : " + e.getMessage())
@@ -48,15 +49,15 @@ public class TicketResourceBDD {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addTicketBDD(TicketModel ticket) {
+    public Response addUserBDD(UserModel user) {
         try {
-            ticketService.addTicketBDD(ticket);
+            userService.addUserBDD(user);
             return Response.status(Response.Status.CREATED)
-                    .entity("Le ticket a été ajouté avec succès.")
+                    .entity("Le user a été ajouté avec succès.")
                     .build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                    .entity("Erreur lors de l'ajout du ticket : " + e.getMessage())
+                    .entity("Erreur lors de l'ajout du user : " + e.getMessage())
                     .build();
         }
     }
@@ -65,13 +66,13 @@ public class TicketResourceBDD {
     @Path("/update")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response updateTicket(TicketModel ticket) {
+    public Response updateUser(UserModel user) {
         try {
-            ticketService.updateTicketBDD(ticket);
-            return Response.ok("Le ticket a été mis à jour avec succès.").build();
+            userService.updateUserBDD(user);
+            return Response.ok("Le user a été mis à jour avec succès.").build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                    .entity("Erreur lors de la mise à jour du ticket : " + e.getMessage())
+                    .entity("Erreur lors de la mise à jour du user : " + e.getMessage())
                     .build();
         }
     }
@@ -79,17 +80,17 @@ public class TicketResourceBDD {
     @DELETE
     @Path("/delete")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteTicket(@QueryParam("id") int id) {
+    public Response deleteUser(@QueryParam("id") int id) {
         try {
-            // Appel au service pour supprimer le ticket
-            ticketService.removeTicketBDD(id);
+            // Appel au service pour supprimer le device
+            userService.removeUserBDD(id);
 
             // Retourne une réponse de succès
-            return Response.ok("Le ticket avec l'ID " + id + " a été supprimé avec succès.").build();
+            return Response.ok("Le user avec l'ID " + id + " a été supprimé avec succès.").build();
         } catch (Exception e) {
             // Gestion des erreurs
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                    .entity("Erreur lors de la suppression du ticket : " + e.getMessage())
+                    .entity("Erreur lors de la suppression du device : " + e.getMessage())
                     .build();
         }
     }

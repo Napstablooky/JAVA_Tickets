@@ -14,4 +14,13 @@ public interface UserService {
 
     UserModel updateUser(final UserModel user);
 
+    List<UserModel> getUsersBDD();
+
+    UserModel getUserByIdBDD(int id);
+
+    void addUserBDD(UserModel user);
+
+    void updateUserBDD(UserModel user);
+
+    void removeUserBDD(int id);
 }

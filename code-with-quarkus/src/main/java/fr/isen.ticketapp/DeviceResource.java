@@ -11,7 +11,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import java.util.List;
 
-@Path("/device")
+@Path("/deviceJSON")
 public class DeviceResource {
     private DeviceService deviceService;
 

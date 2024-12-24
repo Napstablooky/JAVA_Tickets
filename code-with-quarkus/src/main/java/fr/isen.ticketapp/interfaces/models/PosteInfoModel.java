@@ -5,10 +5,10 @@ import fr.isen.ticketapp.interfaces.models.enums.ETATPOSTE;
 public class PosteInfoModel {
     public int id;
 
-    public UserModel user;
+    public int user_id;
 
     public ETATPOSTE etat;
 
-    public ConfigurationModel configuration;
+    public int configuration_id;
 
 }
