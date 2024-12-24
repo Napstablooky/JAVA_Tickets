@@ -10,12 +10,13 @@ public interface TicketService {
 
     TicketModel getTicketById(final int id) throws JsonProcessingException;
 
-    TicketModel getTicketByIdBDD(int id);
-
     TicketModel addOneTicket(final TicketModel ticket);
 
     TicketModel removeOneTicket(final int id);
 
     Integer updateOneTicket(final TicketModel ticket);
 
+    TicketModel getTicketByIdBDD(int id);
+
+    List<TicketModel> getTicketsBDD();
 }

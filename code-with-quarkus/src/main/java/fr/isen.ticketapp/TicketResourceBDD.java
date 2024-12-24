@@ -1,5 +1,6 @@
 package fr.isen.ticketapp;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import fr.isen.ticketapp.impl.services.TicketServiceImpl;
 import fr.isen.ticketapp.interfaces.models.TicketModel;
 import fr.isen.ticketapp.interfaces.services.TicketService;
@@ -11,12 +12,22 @@ import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.util.List;
+
 @Path("/ticketBDD")
 public class TicketResourceBDD {
     private TicketService ticketService;
 
     public TicketResourceBDD() {
         this.ticketService = new TicketServiceImpl();
+    }
+
+    @Path("/all")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Uni<Response> getTicketsBDD() throws JsonProcessingException {
+        List<TicketModel> tickets = this.ticketService.getTicketsBDD();
+        return Uni.createFrom().item(Response.ok(tickets).build());
     }
 
     @Path("/one")
