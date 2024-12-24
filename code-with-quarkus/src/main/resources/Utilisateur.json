@@ -1,0 +1,47 @@
+[
+      {
+        "id": "1",
+        "nom": "Alice Martin",
+        "email": "alice.martin@example.com",
+        "password": "password123",
+        "last_connexion": "2024-12-12",
+        "statut": "True",
+        "role": "Utilisateur"
+      },
+      {
+        "id": "2",
+        "nom": "Jean Dupont",
+        "email": "jean.dupont@example.com",
+        "password": "password456",
+        "last_connexion": "2024-12-12",
+        "statut": "False",
+        "role": "Intervenant"
+      }, {
+        "id": "3",
+        "nom": "Claire Durand",
+        "email": "claire.durand@example.com",
+        "password": "password789",
+        "last_connexion": "2024-12-12",
+        "statut": "True",
+        "role": "Utilisateur"
+      },
+      {
+        "id": "4",
+        "nom": "Marc Leblanc",
+        "email": "marc.leblanc@example.com",
+        "password": "password321",
+        "last_connexion": "2024-12-12",
+        "statut": "False",
+        "role": "Intervenant"
+      },
+      {
+        "id": "5",
+        "nom": "Sophie Laurent",
+        "email": "sophie.laurent@example.com",
+        "password": "password654",
+        "last_connexion": "2024-12-12",
+        "statut": "True",
+        "role": "Utilisateur"
+      }
+    ]
+  
